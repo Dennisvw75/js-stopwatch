@@ -17,6 +17,7 @@ milisecondsEL.textContent = '000';
 let min = 0;
 let sec = 0;
 let mili = 0;
+let action;
 
 function startStopwatch() {
   mili += 10;
@@ -50,8 +51,13 @@ stopBTN.addEventListener('click', function () {
   clearInterval(action);
 });
 
-resetBTN.addEventListener('click', function () {
+function resetStopwatch() {
+  min = 0;
+  sec = 0;
+  mili = 0;
   minutesEL.textContent = '00:';
   secondsEL.textContent = '00:';
   milisecondsEL.textContent = '000';
-});
+}
+
+resetBTN.addEventListener('click', resetStopwatch);
